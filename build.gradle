@@ -1,0 +1,52 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            name = "forge"
+            url = "http://files.minecraftforge.net/maven"
+        }
+        maven {
+            name = "sonatype"
+            url = "https://oss.sonatype.org/content/repositories/snapshots/"
+        }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+    }
+
+}
+
+plugins {
+    id "net.minecraftforge.gradle.forge" version "2.0.2"
+    id 'org.spongepowered.plugin' version '0.9.0'
+}
+
+minecraft {
+    version = "1.12.2-14.23.5.2808"
+    runDir = "run"
+    mappings = "snapshot_20171007"
+}
+
+repositories {
+    jcenter()
+    maven {
+        name = "Thiakil"
+        url = "https://maven.thiakil.com/"
+    }
+    maven {
+        name = "Nucleus"
+        url = "http://repo.drnaylor.co.uk/artifactory/list/minecraft"
+    }
+}
+
+group = pluginGroup
+version = pluginVersion
+
+dependencies {
+    compile 'org.spongepowered:spongeapi:7.2.0-SNAPSHOT'
+
+    compileOnly "com.azanor.baubles:Baubles:1.12-1.5.2"
+    compile "io.github.nucleuspowered:nucleus-api:1.9.3-S7.1"
+}
+
+sponge.plugin.id = pluginId
