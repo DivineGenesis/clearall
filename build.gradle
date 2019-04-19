@@ -28,11 +28,15 @@ minecraft {
 }
 
 repositories {
-    jcenter()
+    maven {
+        name ="CurseForge"
+        url = "https://minecraft.curseforge.com/api/maven/"
+    }
     maven {
         name = "Thiakil"
         url = "https://maven.thiakil.com/"
     }
+   jcenter()
     maven {
         name = "Nucleus"
         url = "http://repo.drnaylor.co.uk/artifactory/list/minecraft"
@@ -46,7 +50,8 @@ dependencies {
     compile 'org.spongepowered:spongeapi:7.2.0-SNAPSHOT'
 
     compileOnly "com.azanor.baubles:Baubles:1.12-1.5.2"
-    compile "io.github.nucleuspowered:nucleus-api:1.9.3-S7.1"
+    deobfProvided "cyclic:Cyclic:1.12.2:1.18.3"
+    compile "io.github.nucleuspowered:nucleus-api:1.6.3-S7.1"
 }
 
 sponge.plugin.id = pluginId

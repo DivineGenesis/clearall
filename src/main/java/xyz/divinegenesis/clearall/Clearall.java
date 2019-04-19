@@ -15,8 +15,13 @@ import org.spongepowered.api.plugin.Plugin;
 
 
 
-@Plugin (id = "clearall", name = "Clearall",dependencies = {
-        @Dependency(id = "nucleus")
+@Plugin (id = "clearall",
+        version = "1.1.0",
+        name = "Clearall",
+        dependencies = {
+        @Dependency(
+                id = "nucleus",version = "1.6.3"
+        )
 })
 public class Clearall {
 
