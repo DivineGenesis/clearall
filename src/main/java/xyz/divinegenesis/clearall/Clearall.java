@@ -3,7 +3,7 @@ package xyz.divinegenesis.clearall;
 import baubles.api.BaublesApi;
 import com.lothrazar.cyclicmagic.playerupgrade.storage.InventoryPlayerExtended;
 import com.lothrazar.cyclicmagic.util.UtilPlayerInventoryFilestorage;
-import io.github.nucleuspowered.nucleus.api.events.NucleusClearInventoryEvent;
+import io.github.nucleuspowered.nucleus.api.module.inventory.NucleusClearInventoryEvent;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import org.spongepowered.api.Sponge;
@@ -20,13 +20,13 @@ import org.spongepowered.api.plugin.Plugin;
         name = "Clearall",
         dependencies = {
         @Dependency(
-                id = "nucleus",version = "1.6.3"
+                id = "nucleus", version = "[2.0.0,)"
         )
 })
 public class Clearall {
 
     @Listener
-    public void onClearAll (NucleusClearInventoryEvent.Post event,@First Player player) {
+    public void onClearAll (NucleusClearInventoryEvent.Post event, @First Player player) {
 
         if (event.isClearingAll()) {
             if (Sponge.getPluginManager().isLoaded("baubles")) {
